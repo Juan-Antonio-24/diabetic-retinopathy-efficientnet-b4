@@ -82,8 +82,9 @@ A custom preprocessing pipeline was applied:
 To mitigate class imbalance, a **WeightedRandomSampler** was implemented:
 
 * Class weights computed as:
-  \`weight = 1 / sqrt(class_count)\`
-
+```python
+weight = 1 / sqrt(class_count)
+```
 ---
 
 ## Results
