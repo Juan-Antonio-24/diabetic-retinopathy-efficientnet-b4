@@ -123,23 +123,6 @@ To mitigate class imbalance, a **WeightedRandomSampler** was implemented:
 
 ---
 
-## Project Structure
-
-\`\`\`
-├── model/
-│   ├── retinopathy_best_weights_B4.pth
-│
-├── training/
-│   ├── dataset_labeled.ipynb
-│   ├── dataset_processing.ipynb
-│   ├── dataset_training_V2.ipynb
-│
-├── requirements.txt
-├── README.md
-\`\`\`
-
----
-
 ## How to Run
 
 ### 1. Install dependencies
