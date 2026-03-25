@@ -1,4 +1,4 @@
-# diabetic-retinopathy-efficientnet-b4
+cat << 'EOF' > README.md
 # Diabetic Retinopathy Detection using Deep Learning (EfficientNet-B4)
 
 ## Overview
@@ -46,12 +46,9 @@ A custom preprocessing pipeline was applied:
 
 * Images resized to **224×224**
 * Dataset split into:
-
   * **80% Training set**
   * **20% Validation set**
 * Images organized into class folders (0–4)
-
-The split preserved the original class distribution, ensuring a realistic evaluation under imbalanced conditions.
 
 ---
 
@@ -86,8 +83,7 @@ The split preserved the original class distribution, ensuring a realistic evalua
 To mitigate class imbalance, a **WeightedRandomSampler** was implemented:
 
 * Class weights computed as:
-  `weight = 1 / sqrt(class_count)`
-* This approach increases exposure to minority classes while avoiding overcompensation and instability.
+  \`weight = 1 / sqrt(class_count)\`
 
 ---
 
@@ -96,61 +92,80 @@ To mitigate class imbalance, a **WeightedRandomSampler** was implemented:
 * **Best QWK:** ~0.66
 * **Validation Accuracy:** ~74–76%
 
-### Observations:
-
-* Strong performance on majority class (0)
-* Moderate performance on class 2
-* Difficulty distinguishing:
-
-  * Mild (1) vs No DR (0)
-  * Severe (3–4) vs Moderate (2)
-
 ---
 
 ## Error Analysis
 
 ### Key Challenges:
 
-1. **Severe class imbalance**
-
-   * Model biased toward class 0 (~70% of data)
-
-2. **Ordinal nature of labels**
-
-   * Misclassifications between adjacent classes are common
-
-3. **Noisy data**
-
-   * Variability in image quality (blur, exposure, artifacts)
-   * Subjective clinical labeling
-
----
-
-## Confusion Matrix Insights
-
-* Class 1 frequently misclassified as 0
-* Classes 3 and 4 often confused with class 2
-* Model tends to predict intermediate classes when uncertain
+1. Severe class imbalance  
+2. Ordinal nature of labels  
+3. Noisy data  
 
 ---
 
 ## Future Improvements
 
-* Apply **class-weighted loss**
-* Explore **Focal Loss**
-* Reformulate as **regression problem (0–4 continuous)**
-* Use **Test Time Augmentation (TTA)**
-* Improve data preprocessing and augmentation
+* Class-weighted loss  
+* Focal Loss  
+* Regression formulation  
+* Test Time Augmentation  
+* Better preprocessing  
 
 ---
 
 ## Key Learnings
 
-* Handling imbalanced datasets is critical in medical AI
-* Accuracy alone is not sufficient — QWK provides better insight
-* Proper data splitting is essential for reliable evaluation
-* Iterative experimentation is key to improving model performance
+* Imbalance handling is critical  
+* Accuracy is not enough — QWK matters  
+* Proper data splitting is essential  
+* Iteration improves performance  
 
 ---
 
 ## Project Structure
+
+\`\`\`
+├── model/
+│   ├── retinopathy_best_weights_B4.pth
+│
+├── training/
+│   ├── dataset_labeled.ipynb
+│   ├── dataset_processing.ipynb
+│   ├── dataset_training_V2.ipynb
+│
+├── requirements.txt
+├── README.md
+\`\`\`
+
+---
+
+## How to Run
+
+### 1. Install dependencies
+\`\`\`bash
+pip install -r requirements.txt
+\`\`\`
+
+### 2. Run training
+
+Open Jupyter Notebook:
+
+\`\`\`bash
+jupyter notebook
+\`\`\`
+
+Then open and run:
+
+\`\`\`
+dataset_training_V2.ipynb
+\`\`\`
+
+> Note: This project uses PyTorch. For GPU support, install the appropriate version from https://pytorch.org
+
+---
+
+## Author
+
+Juan Antonio Barreda Mendez
+EOF
