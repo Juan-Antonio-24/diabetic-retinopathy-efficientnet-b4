@@ -1,4 +1,3 @@
-cat << 'EOF' > README.md
 # Diabetic Retinopathy Detection using Deep Learning (EfficientNet-B4)
 
 ## Overview
@@ -151,4 +150,3 @@ dataset_training_V2.ipynb
 ## Author
 
 Juan Antonio Barreda Mendez
-EOF
