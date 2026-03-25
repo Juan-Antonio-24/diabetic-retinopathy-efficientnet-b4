@@ -121,28 +121,24 @@ To mitigate class imbalance, a **WeightedRandomSampler** was implemented:
 * Iteration improves performance  
 
 ---
-
 ## How to Run
 
 ### 1. Install dependencies
-
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 ### 2. Run training
 
 Open Jupyter Notebook:
-
-\`\`\`bash
+```bash
 jupyter notebook
-\`\`\`
+```
 
 Then open and run:
-
-\`\`\`
+```
 dataset_training_V2.ipynb
-\`\`\`
+```
 
 > Note: This project uses PyTorch. For GPU support, install the appropriate version from https://pytorch.org
 
