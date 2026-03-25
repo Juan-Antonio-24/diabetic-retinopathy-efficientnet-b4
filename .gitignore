@@ -1,0 +1,4 @@
+dataset/
+dataset_training.ipynb
+retinopathy_checkpoint_B4.pth
+retinopathy_model.pth
